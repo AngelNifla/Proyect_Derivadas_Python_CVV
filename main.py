@@ -91,7 +91,7 @@ def derivada():
                 a=symbols('z')
             print('derivada lista')
             derivada = diff(f,a)
-            etiqueta.configure(text=derivada)
+            etiqueta2.configure(text=derivada)
         else:
             if re[1] == 'x':
                 if re[2]=='y':
@@ -117,7 +117,7 @@ def derivada():
             etiqueta6.configure(text=derivada5)
             etiqueta7.configure(text=derivada6)
     except:
-        etiqueta.configure(text="Error: Introduce las variables o función correctamente")
+        etiqueta2.configure(text="Error: Introduce las variables o función correctamente")
         
 
 
@@ -146,56 +146,71 @@ def graficar():
     plot3d(f, (x, -100,100), (y, -100,100), (z, -100,100))
 
 ventana = Tk()
-ventana.geometry('902x526')
+ventana.geometry('1200x600')
 
-bg = PhotoImage(file = 'E:/PYTHON DATE/Prueba_calculadora/Fondo.png')
+bg = PhotoImage(file = 'E:/PYTHON DATE/Nueva carpeta/Fondo.png')
 label1 = Label(ventana, image=bg)
 label1.place(x=0, y=0)
 
 ventana.title("Proyecto Final - Cálculo Diferencial e Integral: f(x)")
 
-anuncio = Label(ventana, text="Introduce una F():", font=("Arial", 15), fg="blue")
-anuncio.pack()
+anuncio = Label(ventana, text="Introduce una F():", font=("Corbel", 15), fg="black", width=23)
+anuncio.place(x=50, y=30)
 
-variables = Entry(ventana, font=("Arial", 15))
-variables.pack()
+variables = Entry(ventana, font=("Corbel", 15), width=23)
+variables.place(x=320, y=30)
 
-anuncio3 = Label(ventana, text="Antecedentes:", font=("Arial", 15), fg="blue")
-anuncio3.pack()
+anuncio3 = Label(ventana, text="Antecedentes:", font=("Corbel", 15), fg="blue", width=23)
+anuncio3.place(x=190, y=70)
 
-anuncio1 = Label(ventana, text="Introduce una función:", font=("Arial", 15), fg="blue")
-anuncio1.pack()
-funcion = Entry(ventana, font=("Arial", 15))
-funcion.pack()
 
-anuncio4 = Label(ventana, text="Antecedentes:", font=("Arial", 15), fg="blue")
-anuncio4.pack()
 
-etiqueta = Label(ventana, text="Resultado", font=("Arial", 15), fg="red")
-etiqueta.pack()
+anuncio1 = Label(ventana, text="Introduce una función:", font=("Corbel", 15), fg="black", width=22)
+anuncio1.place(x=600, y=30)
+funcion = Entry(ventana, font=("Corbel", 15), width=22)
+funcion.place(x=870, y=30)
+anuncio4 = Label(ventana, text="Antecedentes:", font=("Corbel", 15), fg="blue", width=22)
+anuncio4.place(x=740, y=70)
+'''
+etiqueta = Label(ventana, text="Resultado", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta.place(x=70, y=190)
+'''
+etiqueta0_2 = Label(ventana, text="Derivada DF/Da :", font=("Corbel", 15), fg="red", bg='white')
+etiqueta0_2.place(x=70, y=200)
+etiqueta2 = Label(ventana, text="Resultados", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta2.place(x=100, y=240)
+etiqueta0_4 = Label(ventana, text="Derivada DF/Daa :", font=("Corbel", 15), fg="red", bg='white')
+etiqueta0_4.place(x=70, y=300)
+etiqueta4 = Label(ventana, text="Resultados", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta4.place(x=100, y=340)
+etiqueta0_5 = Label(ventana, text="Derivada DF/Dab :", font=("Corbel", 15), fg="red", bg='white')
+etiqueta0_5.place(x=70, y=400)
+etiqueta6 = Label(ventana, text="Resultados", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta6.place(x=100, y=440)
 
-etiqueta2 = Label(ventana, text="Resultados", font=("Arial", 15), fg="red")
-etiqueta2.pack()
-etiqueta3 = Label(ventana, text="Resultados", font=("Arial", 15), fg="red")
-etiqueta3.pack()
-etiqueta4 = Label(ventana, text="Resultados", font=("Arial", 15), fg="red")
-etiqueta4.pack()
-etiqueta5 = Label(ventana, text="Resultados", font=("Arial", 15), fg="red")
-etiqueta5.pack()
-etiqueta6 = Label(ventana, text="Resultados", font=("Arial", 15), fg="red")
-etiqueta6.pack()
-etiqueta7 = Label(ventana, text="Resultados", font=("Arial", 15), fg="red")
-etiqueta7.pack()
 
-boton1 = Button(ventana, text="Derivar Función", font=("Arial", 15), command=derivada)
-boton1.pack()
+etiqueta0_3 = Label(ventana, text="Derivada DF/Db :", font=("Corbel", 15), fg="red", bg='white')
+etiqueta0_3.place(x=770, y=200)
+etiqueta3 = Label(ventana, text="Resultados", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta3.place(x=800, y=240)
+etiqueta0_5 = Label(ventana, text="Derivada DF/Dbb :", font=("Corbel", 15), fg="red", bg='white')
+etiqueta0_5.place(x=770, y=300)
+etiqueta5 = Label(ventana, text="Resultados", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta5.place(x=800, y=340)
+etiqueta0_5 = Label(ventana, text="Derivada DF/Dba :", font=("Corbel", 15), fg="red", bg='white')
+etiqueta0_5.place(x=770, y=400)
+etiqueta7 = Label(ventana, text="Resultados", font=("Corbel", 15), fg="white", bg='#000000')
+etiqueta7.place(x=800, y=440)
 
-boton4 = Button(ventana, text="Gráfico de la función", font=("Arial", 15), command=graficar, width=22)
-boton4.pack(pady=(5,0))
-anuncio5 = Label(ventana, text="Antecedentes del grafico:", font=("Arial", 15), fg="blue")
-anuncio5.pack()
+boton1 = Button(ventana, text="Derivar Función", font=("Corbel", 15), command=derivada, width=22, background="CadetBlue")
+boton1.place(x=30, y=520)
 
-#boton2 = Button(ventana, text="Integrar Función", font=("Arial", 15), command=integral)
+boton4 = Button(ventana, text="Gráfico de la función", font=("Corbel", 15), command=graficar, width=22, background="CadetBlue")
+boton4.place(x=470,y=490)
+anuncio5 = Label(ventana, text="Antecedentes del grafico:", font=("Corbel", 15), fg="blue", width=22)
+anuncio5.place(x=472,y=535)
+
+#boton2 = Button(ventana, text="Integrar Función", font=("Corbel", 15), command=integral)
 #boton2.pack()
 
 def _quit(): #Función salir
@@ -203,7 +218,7 @@ def _quit(): #Función salir
     ventana.destroy()  # elimina la ventana de la memoria
                     
 
-button3 = Button(master=ventana, text="Salir", font=("Arial", 15), command=_quit)
-button3.pack()
+button3 = Button(master=ventana, text="Salir", font=("Corbel", 15), command=_quit, width=22, background="CadetBlue")
+button3.place(x=910, y=520)
 
 ventana.mainloop()
